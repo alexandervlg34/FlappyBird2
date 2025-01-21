@@ -6,7 +6,6 @@ public class LoopGround : MonoBehaviour
     [SerializeField] private float _width;
 
     private SpriteRenderer _spriteRenderer;
-
     private Vector2 _startSize;
 
     private void Start()

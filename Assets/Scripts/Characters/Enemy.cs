@@ -1,16 +1,17 @@
+using System;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour, IInteractable
+public class Enemy : MonoBehaviour
 {
-    public void Destroy()
-    {
-        Destroy(gameObject);
-    }
+    public event Action Died;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out IInteractable interactable))
+        if (collision.gameObject.TryGetComponent(out BirdBullet bullet))
         {
-            GameManager.instance.GameOver();
+            
+            Died?.Invoke();
+            gameObject.SetActive(false);
         }
     }
 }

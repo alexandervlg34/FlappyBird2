@@ -3,32 +3,27 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public static Score instance;
-
+    [SerializeField] private Bird _bird;
+    
     [SerializeField] private TextMeshProUGUI _currentScoreText;
     [SerializeField] private TextMeshProUGUI _highScoredText;
 
+    private const string HIGHSCORE = "HighScore";
     private int _score;
-    private void Awake()
-    {
-        if(instance == null)
-        {
-            instance = this;
-        }
-    }
 
     private void Start()
     {
+        _bird.GotSuccess += UpdateScore;
         _currentScoreText.text = _score.ToString();
-        _highScoredText.text = PlayerPrefs.GetInt("HighScore", 0).ToString();
+        _highScoredText.text = PlayerPrefs.GetInt(HIGHSCORE, 0).ToString();
         UpdateHighScore();
     }
 
     private void UpdateHighScore()
     {
-        if(_score > PlayerPrefs.GetInt("HighScore"))
+        if(_score > PlayerPrefs.GetInt(HIGHSCORE))
         {
-            PlayerPrefs.SetInt("HighScore", _score);
+            PlayerPrefs.SetInt(HIGHSCORE, _score);
             _highScoredText.text = _score.ToString();
         }
     }

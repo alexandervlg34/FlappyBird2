@@ -1,10 +1,25 @@
+using System;
 using UnityEngine;
 
-public class Bird : MonoBehaviour, IInteractable
+public class Bird : MonoBehaviour
 {
-    public void Destroy()
+    public event Action Died;
+    public event Action GotSuccess;
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.SetActive(false);
-        GameManager.instance.GameOver();
-    }
+        if (collision.gameObject.TryGetComponent(out EnemyBullet enemyBullet))
+        {
+            Died?.Invoke();
+            gameObject.SetActive(false);
+        }
+        else if (collision.gameObject.TryGetComponent(out PipeIncreaseScore pipeIncreaseScore))
+        {
+            GotSuccess?.Invoke();
+        }
+        else 
+        {
+            Died?.Invoke();
+        }
+    } 
 }

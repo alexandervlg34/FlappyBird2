@@ -1,23 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public class Game : MonoBehaviour
 {
-    public static GameManager instance;
-
+    [SerializeField] private Bird _bird;
     [SerializeField] private GameObject _gameOverCanvas;
 
     private void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-        }
-
         Time.timeScale = 1f;
+        _bird.Died += OnGameOver;
     }
 
-    public void GameOver()
+    public void OnGameOver()
     {
         _gameOverCanvas.SetActive(true);
 

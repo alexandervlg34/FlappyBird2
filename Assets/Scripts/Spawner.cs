@@ -11,41 +11,50 @@ public class Spawner : MonoBehaviour
     public TypeOfObject typeOfObject;
 
     [SerializeField] private float _maxTime;
-    [SerializeField] private float _heightRange;
-    [SerializeField] private GameObject _pipe;
-
+    [SerializeField] private float _upperYPosition;
+    [SerializeField] private float _bottomYPosition;
+    [SerializeField] private GameObject _spawnedObject;
+    [SerializeField] private Score _score;
+    
     private float _timer;
 
     private void Start()
     {
         if(typeOfObject == TypeOfObject.Pipe)
         {
-            _heightRange = 0.45f;
+            _bottomYPosition = -0.45f;
+            _upperYPosition = 0.45f;
         }
         else
         {
-            _heightRange = 1f;
+            _bottomYPosition = -0.45f;
+            _upperYPosition = 1f;
         }
-        
-        SpawnPipe();
+
+        SpawnObject();
     }
 
     private void Update()
     {
         if(_timer > _maxTime)
         {
-            SpawnPipe();
+            SpawnObject();
             _timer = 0;
         }
 
         _timer += Time.deltaTime;
     }
 
-    private void SpawnPipe()
+    private void SpawnObject()
     {
-        Vector3 spawnPos = transform.position + new Vector3(0, Random.Range(-_heightRange, _heightRange));
-        GameObject pipe = Instantiate(_pipe, spawnPos, Quaternion.identity);
+        Vector3 spawnPos = transform.position + new Vector3(0, Random.Range(_bottomYPosition, _upperYPosition));
+        GameObject spawnedObject = Instantiate(_spawnedObject, spawnPos, Quaternion.identity);
 
-        Destroy(pipe, 10f);
+        if(spawnedObject.gameObject.TryGetComponent(out Enemy enemy))
+        {
+            enemy.Died += _score.UpdateScore; 
+        }
+
+        Destroy(spawnedObject, 5f);
     }
 }
