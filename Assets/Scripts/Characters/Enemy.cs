@@ -9,7 +9,6 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.TryGetComponent(out BirdBullet bullet))
         {
-            
             Died?.Invoke();
             gameObject.SetActive(false);
         }

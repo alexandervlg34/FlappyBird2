@@ -4,7 +4,6 @@ using UnityEngine;
 public class Bird : MonoBehaviour
 {
     public event Action Died;
-    public event Action GotSuccess;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -13,13 +12,10 @@ public class Bird : MonoBehaviour
             Died?.Invoke();
             gameObject.SetActive(false);
         }
-        else if (collision.gameObject.TryGetComponent(out PipeIncreaseScore pipeIncreaseScore))
-        {
-            GotSuccess?.Invoke();
-        }
-        else 
+
+        if (collision.gameObject.TryGetComponent(out Pipe pipe) || collision.gameObject.TryGetComponent(out Border border))
         {
             Died?.Invoke();
         }
-    } 
+    }
 }

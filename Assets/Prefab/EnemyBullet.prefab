@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5227305250886904829}
   - component: {fileID: 10546146722347767}
   - component: {fileID: 8418345192672706150}
+  - component: {fileID: -2232521473843194898}
   m_Layer: 8
   m_Name: EnemyBullet
   m_TagString: Untagged
@@ -161,7 +162,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44d2b576572bbe24b9813492b1520d57, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-2232521473843194898
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873754014273931532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2792ddbc3fdc1744589adf3b6491c4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _transform: {fileID: 90254845013422507}
   _rigidbody: {fileID: 10546146722347767}
-  _bulletSpeed: 150
+  _bulletSpeed: 250
   _activeArea: 1

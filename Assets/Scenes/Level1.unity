@@ -237,11 +237,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 135146148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddfe4aa54c4a02c4785bdac4fe7ca223, type: 3}
+  m_Script: {fileID: 11500000, guid: b385b87654881f54faf3988e12ec40a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bird: {fileID: 1764261512}
-  _enemy: {fileID: 7918879967676309714, guid: 32561bb745ded1840ad6a1b90bc1ec91, type: 3}
   _currentScoreText: {fileID: 306101213}
   _highScoredText: {fileID: 1450788104}
 --- !u!1 &158286324
@@ -1001,7 +999,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 463841488}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad931350f057ef429d4a837e3c2f46d, type: 3}
+  m_Script: {fileID: 11500000, guid: a3aa362c4db66de41afead3476e2a115, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &519420028
@@ -1210,6 +1208,7 @@ GameObject:
   m_Component:
   - component: {fileID: 978232854}
   - component: {fileID: 978232853}
+  - component: {fileID: 978232855}
   m_Layer: 9
   m_Name: Border
   m_TagString: Untagged
@@ -1277,6 +1276,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &978232855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978232852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3aa362c4db66de41afead3476e2a115, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1269737171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1659,8 +1670,9 @@ GameObject:
   - component: {fileID: 1764261507}
   - component: {fileID: 1764261506}
   - component: {fileID: 1764261511}
-  - component: {fileID: 1764261512}
   - component: {fileID: 1764261513}
+  - component: {fileID: 1764261514}
+  - component: {fileID: 1764261515}
   m_Layer: 6
   m_Name: Bird
   m_TagString: Untagged
@@ -1830,18 +1842,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bbbea7186e32ae4e82e4d639488d233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1764261512
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1764261505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e595d99956b9f72438c79027f45fc729, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1764261513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1857,6 +1857,30 @@ MonoBehaviour:
   _velocity: 1.5
   _rotationSpeed: 10
   _rigidbody: {fileID: 1764261507}
+--- !u!114 &1764261514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764261505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92c766ecb49c7df4395c0f0fe905da7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1764261515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1764261505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0322482128a00034a977216476dd495c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2003051065
 GameObject:
   m_ObjectHideFlags: 0
@@ -1886,11 +1910,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18e55fd002f58f44d84d632f69c5064f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeOfObject: 0
   _maxTime: 3
   _upperYPosition: 0
   _bottomYPosition: 0
   _spawnedObject: {fileID: 5672207655007519017, guid: 11abf1012588c17408f89f5d7809b450, type: 3}
+  _scoreSaver: {fileID: 2137077836}
 --- !u!4 &2003051067
 Transform:
   m_ObjectHideFlags: 0
@@ -1935,7 +1959,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d5a0b78f87d184f9baceac733629af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bird: {fileID: 1764261512}
+  _bird: {fileID: 1764261514}
   _gameOverCanvas: {fileID: 966554296}
 --- !u!4 &2009540367
 Transform:
@@ -1944,6 +1968,52 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009540365}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2137077835
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137077837}
+  - component: {fileID: 2137077836}
+  m_Layer: 0
+  m_Name: ScoreSaver
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2137077836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137077835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d9806d313bed7b449bfbf7272d4ac77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerSuccess: {fileID: 1764261515}
+  _scoreView: {fileID: 135146153}
+--- !u!4 &2137077837
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137077835}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -1966,3 +2036,4 @@ SceneRoots:
   - {fileID: 2009540367}
   - {fileID: 135146152}
   - {fileID: 978232854}
+  - {fileID: 2137077837}

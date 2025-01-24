@@ -14,7 +14,7 @@ public class EnemyGun : MonoBehaviour
     {
         while (true)
         {
-            Instantiate(_bulletPrefab, transform.position, Quaternion.identity);
+            Instantiate(_bulletPrefab, transform.position, transform.rotation);
             yield return new WaitForSeconds(2f);
         }
     }

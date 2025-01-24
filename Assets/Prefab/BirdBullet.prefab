@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8970039166775442290}
   - component: {fileID: 5227305250886904829}
   - component: {fileID: 10546146722347767}
-  - component: {fileID: 6818598181753492654}
+  - component: {fileID: -4945072637024721937}
+  - component: {fileID: 1460065119812385111}
   m_Layer: 8
   m_Name: BirdBullet
   m_TagString: Untagged
@@ -149,7 +150,23 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &6818598181753492654
+--- !u!114 &-4945072637024721937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8873754014273931532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2792ddbc3fdc1744589adf3b6491c4ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _transform: {fileID: 90254845013422507}
+  _rigidbody: {fileID: 10546146722347767}
+  _bulletSpeed: 250
+  _activeArea: 1
+--- !u!114 &1460065119812385111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,7 +178,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92a479d948aa19442b2a6379bba343d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _transform: {fileID: 90254845013422507}
-  _rigidbody: {fileID: 10546146722347767}
-  _bulletSpeed: 250
-  _activeArea: 1

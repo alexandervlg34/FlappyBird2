@@ -1,26 +1,18 @@
 using UnityEngine;
 
-public enum TypeOfObject
-{
-    Pipe,
-    Enemy
-}
-
 public class Spawner : MonoBehaviour
 {
-    public TypeOfObject typeOfObject;
-
     [SerializeField] private float _maxTime;
     [SerializeField] private float _upperYPosition;
     [SerializeField] private float _bottomYPosition;
     [SerializeField] private GameObject _spawnedObject;
-    [SerializeField] private Score _score;
+    [SerializeField] private ScoreSaver _scoreSaver;
     
     private float _timer;
 
     private void Start()
     {
-        if(typeOfObject == TypeOfObject.Pipe)
+        if(_spawnedObject.gameObject.TryGetComponent(out Pipe pipe))
         {
             _bottomYPosition = -0.45f;
             _upperYPosition = 0.45f;
@@ -52,7 +44,7 @@ public class Spawner : MonoBehaviour
 
         if(spawnedObject.gameObject.TryGetComponent(out Enemy enemy))
         {
-            enemy.Died += _score.UpdateScore; 
+            enemy.Died += _scoreSaver.UpdateScore; 
         }
 
         Destroy(spawnedObject, 5f);
