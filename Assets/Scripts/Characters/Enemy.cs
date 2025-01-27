@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : MonoBehaviour
 {

@@ -2,10 +2,11 @@ using UnityEngine;
 
 public class ScoreSaver : MonoBehaviour
 {
-    [SerializeField] private PlayerSuccess _playerSuccess;
+    private const string HIGHSCORE = "HighScore";
+
+    [SerializeField] private SuccessMark _playerSuccess;
     [SerializeField] private ScoreView _scoreView;
 
-    private const string HIGHSCORE = "HighScore";
     private int _score;
 
     private void Start()

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class FlyController : MonoBehaviour
 {
@@ -7,25 +6,14 @@ public class FlyController : MonoBehaviour
     [SerializeField] private float _rotationSpeed;
     [SerializeField] private Rigidbody2D _rigidbody;
 
-    private bool _isMousePressed = false;
-
-    private void Update()
+    public void Rotate()
     {
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            _isMousePressed = true;
-        }
+        transform.rotation = Quaternion.Euler(0, 0, _rigidbody.velocity.y * _rotationSpeed);
     }
 
-    private void FixedUpdate()
+    public void MoveUp()
     {
-        if (_isMousePressed)
-        {
-            _rigidbody.velocity = Vector2.up * _velocity;
-            _isMousePressed = false;
-        }
-
-        transform.rotation = Quaternion.Euler(0, 0, _rigidbody.velocity.y * _rotationSpeed);
+        _rigidbody.velocity = Vector2.up * _velocity;
     }
 }
   

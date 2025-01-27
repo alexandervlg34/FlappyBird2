@@ -22,7 +22,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent(out Border border))
+        if (collision.gameObject.TryGetComponent(out DeathZone border))
         {
             Destroy();
         }

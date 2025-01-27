@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour
@@ -12,16 +13,9 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        if(_spawnedObject.gameObject.TryGetComponent(out Pipe pipe))
-        {
-            _bottomYPosition = -0.45f;
-            _upperYPosition = 0.45f;
-        }
-        else
-        {
-            _bottomYPosition = -0.45f;
-            _upperYPosition = 1f;
-        }
+        (_bottomYPosition, _upperYPosition) = _spawnedObject.gameObject.TryGetComponent(out Pipe pipe)
+        ? (-0.45f, 0.45f)
+        : (-0.45f, 1f);
 
         SpawnObject();
     }
@@ -47,6 +41,13 @@ public class Spawner : MonoBehaviour
             enemy.Died += _scoreSaver.UpdateScore; 
         }
 
-        Destroy(spawnedObject, 5f);
+        StartCoroutine(Destroy(spawnedObject, enemy));
+    }
+
+    private IEnumerator Destroy(GameObject spawnedObject, Enemy enemy)
+    {
+        yield return new WaitForSeconds(5f);
+        enemy.Died -= _scoreSaver.UpdateScore;
+        Destroy(spawnedObject);  
     }
 }

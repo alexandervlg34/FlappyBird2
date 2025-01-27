@@ -13,7 +13,7 @@ public class Bird : MonoBehaviour
             gameObject.SetActive(false);
         }
 
-        if (collision.gameObject.TryGetComponent(out Pipe pipe) || collision.gameObject.TryGetComponent(out Border border))
+        if (collision.gameObject.TryGetComponent(out DeathZone deathZone))
         {
             Died?.Invoke();
         }

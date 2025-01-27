@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d9806d313bed7b449bfbf7272d4ac77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerSuccess: {fileID: 2047155074}
+  _playerSuccess: {fileID: 2047155077}
   _scoreView: {fileID: 581063054}
 --- !u!4 &968110241
 Transform:
@@ -1807,11 +1807,10 @@ GameObject:
   - component: {fileID: 2047155070}
   - component: {fileID: 2047155069}
   - component: {fileID: 2047155068}
-  - component: {fileID: 2047155067}
-  - component: {fileID: 2047155075}
-  - component: {fileID: 2047155074}
   - component: {fileID: 2047155073}
   - component: {fileID: 2047155076}
+  - component: {fileID: 2047155078}
+  - component: {fileID: 2047155077}
   m_Layer: 6
   m_Name: Bird
   m_TagString: Untagged
@@ -1819,18 +1818,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2047155067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047155065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bbbea7186e32ae4e82e4d639488d233, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &2047155068
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1997,30 +1984,6 @@ MonoBehaviour:
   _velocity: 1.5
   _rotationSpeed: 10
   _rigidbody: {fileID: 2047155069}
---- !u!114 &2047155074
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047155065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0322482128a00034a977216476dd495c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2047155075
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2047155065}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45e1988cf7b89b143a3b15a65dd217c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2047155076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2033,6 +1996,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92c766ecb49c7df4395c0f0fe905da7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2047155077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047155065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59113716f24ee064a87cf01b6f6f82e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2047155078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2047155065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 353c0ee04a7b0504d8b5c51256d964b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _controller: {fileID: 2047155073}
 --- !u!1 &2142650119
 GameObject:
   m_ObjectHideFlags: 0
